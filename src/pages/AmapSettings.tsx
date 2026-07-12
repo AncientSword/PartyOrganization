@@ -134,15 +134,6 @@ export default function AmapSettings() {
           下一步：信息收集
         </button>
       )}
-
-      {!canProceed && (
-        <button
-          onClick={() => navigate('/info')}
-          className="w-full py-3 bg-zinc-800 text-zinc-400 font-medium rounded-xl hover:bg-zinc-700 transition-colors min-h-[48px] text-sm"
-        >
-          跳过，使用文本模式
-        </button>
-      )}
     </div>
   );
 }

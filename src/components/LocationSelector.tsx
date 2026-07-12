@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
-import { MapPin, X, Plus } from 'lucide-react';
+import { MapPin, X } from 'lucide-react';
 import { useAmap } from '@/hooks/useAmap';
 
 interface LocationSelectorProps {
@@ -140,25 +140,12 @@ export default function LocationSelector({ value, onChange, placeholder = '搜�
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
           onFocus={handleInputFocus}
-          placeholder={hasKey ? placeholder : '输入地点名称（文本模式）'}
+          placeholder={placeholder}
           className="w-full bg-zinc-800 border border-zinc-600 rounded-lg pl-9 pr-3 py-2.5 text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-orange-500 transition-colors"
         />
       </div>
 
       {typeof document !== 'undefined' && createPortal(dropdown, document.body)}
-
-      {!hasKey && keyword.trim() && (
-        <button
-          onClick={() => {
-            onChange({ name: keyword.trim(), lng: 0, lat: 0 });
-            setKeyword('');
-          }}
-          className="mt-2 flex items-center gap-1.5 text-xs text-orange-400 hover:text-orange-300 transition-colors"
-        >
-          <Plus className="w-3.5 h-3.5" />
-          使用「{keyword.trim()}」作为地点
-        </button>
-      )}
     </div>
   );
 }
