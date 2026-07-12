@@ -16,7 +16,7 @@ export function exportData() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = `聚会助手_${new Date().toISOString().slice(0, 10)}.json`;
+  a.download = `聚了没_${new Date().toISOString().slice(0, 10)}.json`;
   a.click();
   URL.revokeObjectURL(url);
 }

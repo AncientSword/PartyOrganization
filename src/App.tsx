@@ -14,7 +14,7 @@ export default function App() {
         <header className="sticky top-0 z-40 bg-zinc-950/80 backdrop-blur-lg border-b border-zinc-800">
           <div className="max-w-2xl mx-auto px-4">
             <div className="flex items-center justify-between py-2 gap-2 min-h-[48px]">
-              <h1 className="text-base font-bold text-orange-400 shrink-0">聚会助手</h1>
+              <h1 className="text-base font-bold text-orange-400 shrink-0">聚了没</h1>
               <ImportExportBar />
             </div>
           </div>
