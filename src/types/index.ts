@@ -51,8 +51,8 @@ export interface RouteResult {
   origin: Location;
   destination: ExpectedLocation;
   taxi: { duration: number; cost: number } | null;
-  driving: { duration: number; tolls: number } | null;
-  cycling: { duration: number } | null;
+  driving: { duration: number; cost: number } | null;
+  cycling: { duration: number; cost: number } | null;
   transit: { duration: number; cost: number } | null;
   bestMode: TransportMode;
   bestDuration: number; // minutes
