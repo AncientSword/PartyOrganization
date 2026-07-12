@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import StepIndicator from '@/components/StepIndicator';
 import ImportExportBar from '@/components/ImportExportBar';
 import AmapSettings from '@/pages/AmapSettings';
