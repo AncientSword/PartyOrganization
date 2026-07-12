@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Download, Upload, Trash2 } from 'lucide-react';
 import { exportData, importData } from '@/utils/export';
 import { useAppStore } from '@/store/useAppStore';
@@ -6,6 +7,7 @@ import { useAppStore } from '@/store/useAppStore';
 export default function ImportExportBar() {
   const importDataFn = useAppStore((s) => s.importData);
   const resetAll = useAppStore((s) => s.resetAll);
+  const navigate = useNavigate();
   const fileRef = useRef<HTMLInputElement>(null);
 
   const handleImport = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -14,6 +16,8 @@ export default function ImportExportBar() {
     try {
       const data = await importData(file);
       importDataFn(data);
+      navigate('/');
+      setTimeout(() => window.location.reload(), 50);
     } catch (err) {
       alert(err instanceof Error ? err.message : '导入失败');
     }
@@ -22,7 +26,11 @@ export default function ImportExportBar() {
 
   const handleReset = () => {
     if (window.confirm('确定要清除所有数据吗？此操作不可撤销。')) {
-      resetAll();
+      navigate('/');
+      setTimeout(() => {
+        resetAll();
+        window.location.reload();
+      }, 50);
     }
   };
 

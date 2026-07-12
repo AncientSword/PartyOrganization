@@ -29,12 +29,18 @@ export function useAmap() {
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const loadingRef = useRef(false);
+  const loadedRef = useRef(false);
   const scriptRef = useRef<HTMLScriptElement | null>(null);
   const currentKeyRef = useRef('');
 
   useEffect(() => {
+    loadedRef.current = loaded;
+  }, [loaded]);
+
+  useEffect(() => {
     if (amapKey !== currentKeyRef.current) {
       setLoaded(false);
+      loadedRef.current = false;
       setError(null);
       loadingRef.current = false;
       if (scriptRef.current) {
@@ -49,13 +55,14 @@ export function useAmap() {
 
   const loadAmap = useCallback((): Promise<typeof window.AMap | null> => {
     if (!amapKey) return Promise.resolve(null);
-    if (loaded && window.AMap) return Promise.resolve(window.AMap);
+    if (loadedRef.current && window.AMap) return Promise.resolve(window.AMap);
     if (loadingRef.current) {
       return new Promise((resolve) => {
         const check = setInterval(() => {
           if (window.AMap) {
             clearInterval(check);
             setLoaded(true);
+            loadedRef.current = true;
             resolve(window.AMap);
           }
         }, 100);
@@ -78,6 +85,7 @@ export function useAmap() {
       script.async = true;
       script.onload = () => {
         setLoaded(true);
+        loadedRef.current = true;
         loadingRef.current = false;
         resolve(window.AMap);
       };
@@ -89,7 +97,7 @@ export function useAmap() {
       document.head.appendChild(script);
       scriptRef.current = script;
     });
-  }, [amapKey, amapSecurityCode, loaded]);
+  }, [amapKey, amapSecurityCode]);
 
   const searchPlace = useCallback(
     async (keyword: string, city = '全国'): Promise<PoiSuggestion[]> => {
