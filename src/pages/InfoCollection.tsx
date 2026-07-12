@@ -22,7 +22,7 @@ export default function InfoCollection() {
   const toggleTransportMode = useAppStore((s) => s.toggleTransportMode);
   const navigate = useNavigate();
 
-  const [expandedMembers, setExpandedMembers] = useState<Set<string>>(new Set(members.map((m) => m.id)));
+  const [expandedMembers, setExpandedMembers] = useState<Set<string>>(new Set());
   const [dateRangeInputs, setDateRangeInputs] = useState<Record<string, { start: string; end: string }>>({});
 
   const toggleExpand = (id: string) => {
