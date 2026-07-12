@@ -1,0 +1,146 @@
+{
+  "version": 2,
+  "members": [
+    {
+      "id": "1uj25ksdmrhuiun9",
+      "nickname": "风清扬",
+      "timeRecords": [
+        {
+          "id": "b8b5cvz3mrhuj9vd",
+          "date": "2026-07-18",
+          "morning": true,
+          "afternoon": true,
+          "evening": true,
+          "active": true
+        },
+        {
+          "id": "v2wxxjzumrhujd9k",
+          "date": "2026-07-19",
+          "morning": true,
+          "afternoon": false,
+          "evening": false,
+          "active": true
+        }
+      ],
+      "residence": {
+        "name": "成山路(地铁站)",
+        "lng": 121.496326,
+        "lat": 31.170511
+      },
+      "expectedLocations": [
+        {
+          "id": "5lq1q3inmrhujzf5",
+          "name": "上海植物园",
+          "lng": 121.444271,
+          "lat": 31.147478,
+          "active": true
+        },
+        {
+          "id": "v4pn34hemrhukf7v",
+          "name": "上海共青森林公园(暂停开放)",
+          "lng": 121.551787,
+          "lat": 31.318956,
+          "active": true
+        }
+      ],
+      "transportModes": [
+        "taxi",
+        "transit"
+      ]
+    },
+    {
+      "id": "nnfiehwfmrhukhf8",
+      "nickname": "令狐冲",
+      "timeRecords": [
+        {
+          "id": "n6es1mqnmrhukqdt",
+          "date": "2026-07-18",
+          "morning": false,
+          "afternoon": true,
+          "evening": true,
+          "active": true
+        },
+        {
+          "id": "rq687razmrhuks7w",
+          "date": "2026-07-19",
+          "morning": true,
+          "afternoon": true,
+          "evening": false,
+          "active": true
+        }
+      ],
+      "residence": {
+        "name": "五角场(地铁站)",
+        "lng": 121.514632,
+        "lat": 31.298043
+      },
+      "expectedLocations": [
+        {
+          "id": "sznjinhqmrhulc4p",
+          "name": "上海植物园",
+          "lng": 121.444271,
+          "lat": 31.147478,
+          "active": true
+        },
+        {
+          "id": "y96gf15vmrhulfag",
+          "name": "外滩",
+          "lng": 121.492127,
+          "lat": 31.233516,
+          "active": true
+        }
+      ],
+      "transportModes": [
+        "driving",
+        "transit"
+      ]
+    },
+    {
+      "id": "xa8ua981mrhulhog",
+      "nickname": "任我行",
+      "timeRecords": [
+        {
+          "id": "z6ndzfl5mrhulnqh",
+          "date": "2026-07-18",
+          "morning": true,
+          "afternoon": true,
+          "evening": true,
+          "active": true
+        },
+        {
+          "id": "aja42mgcmrhulpw4",
+          "date": "2026-07-19",
+          "morning": true,
+          "afternoon": true,
+          "evening": true,
+          "active": true
+        }
+      ],
+      "residence": {
+        "name": "徐家汇(地铁站)",
+        "lng": 121.436603,
+        "lat": 31.195514
+      },
+      "expectedLocations": [
+        {
+          "id": "c3fiz6g3mrhumt5t",
+          "name": "上海辰山植物园",
+          "lng": 121.182514,
+          "lat": 31.075983,
+          "active": true
+        }
+      ],
+      "transportModes": [
+        "taxi",
+        "cycling",
+        "transit"
+      ]
+    }
+  ],
+  "amapKey": "your-amap-api-key-here",
+  "amapSecurityCode": "your-amap-security-code-here",
+  "selectedTimeSlot": {
+    "date": "2026-07-18",
+    "period": "evening"
+  }
+}
